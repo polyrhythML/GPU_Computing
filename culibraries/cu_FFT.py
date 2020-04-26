@@ -95,6 +95,7 @@ def conv_2d(ker, img):
     padded_ker = np.zeros((img.shape[0] + 2 * ker.shape[0], img.shape[1] + 2 * ker.shape[1])).astype(np.float32)
     padded_ker[:ker.shape[0], :ker.shape[1]] = ker
     # Roll move the kernel back into the centre
+    # // is floor division
     padded_ker = np.roll(padded_ker, shift=-ker.shape[0] // 2, axis=0)
     padded_ker = np.roll(padded_ker, shift=-ker.shape[1] // 2, axis=1)
     padded_img = np.zeros_like(padded_ker).astype(np.float32)
@@ -105,7 +106,7 @@ def conv_2d(ker, img):
 
     return output
 
-
+# inline function to create gaussian filter operation
 gaussian_filter = lambda x, y, sigma: (1 / np.sqrt(2*np.pi*(sigma**2)))*np.exp(-(x**2 + y**2) / (2 * (sigma**2)))
 
 
