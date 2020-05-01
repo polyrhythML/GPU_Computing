@@ -3,7 +3,7 @@ Let's first start by writing the constructor—we
 will be able to set the max batch size here, which will affect how much
 memory is allocated for the use of this network – we'll store some allocated
 memory used for weights and input/output for each layer in the list
-variable, n ​ etwork_mem​ . We will also store the D
+variable, network_mem​ . We will also store the D
 enseLayer​ and S ​ oftmaxLayer​ objects
 in the list network, and information about each layer in the NN in
 network_summary​ . Notice how we can also set up some training parameters
